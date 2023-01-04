@@ -6,5 +6,6 @@ public class MemberInfo {
         member.setName();
         member.setAge();
         member.setGender();
+        member.setJobs();
     }
 }

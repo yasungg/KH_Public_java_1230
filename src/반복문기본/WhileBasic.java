@@ -16,5 +16,4 @@ public class WhileBasic {
         }
         System.out.println("입력받은 정수의 합은 " + sum + "입니다.");
     }
-
 }

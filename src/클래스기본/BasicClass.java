@@ -7,7 +7,7 @@ public class BasicClass {
 
         Car santafe = new Car("싼타페");
         System.out.println(santafe.carName);
-        System.out.println(car1.Manufacturer); // 왜 되냐 이거?
+        System.out.println(santafe.Manufacturer); // 왜 되냐 이거?
     }
 }
 

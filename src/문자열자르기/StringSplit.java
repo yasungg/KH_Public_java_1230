@@ -13,7 +13,7 @@ public class StringSplit {
 
 
         String[] splitTime = time.split(":");
-        String hr = "";
+        /*String hr = "";
         String min = "";
         String sec = "";
         String amPm = "";
@@ -32,5 +32,12 @@ public class StringSplit {
         else sec = splitTime[2];
 
         System.out.println("현재 시각은 " + amPm + " " + hr + "시 " + min + "분 " + sec + "초입니다.");
+    }*/
+        int hour = Integer.parseInt(splitTime[0]); // 시간에 대한 문자열을 정수로 변환
+        int min = Integer.parseInt(splitTime[1]); // 분에 대한 문자열을 정수로 전환
+        int sec = Integer.parseInt(splitTime[2]); // 초에 대한 문자열을 정수로 전환
+        if (hour > 11) System.out.printf("오후 %02d시 %02d분 %02d초\n", (hour - 12), min, sec);
+        else System.out.printf("오전 %02d시 %02d분 %02d초\n", (hour), min, sec);
+        //%02d = 앞에 공백이 있으면 0으로 바꾸라, %d 명령어
     }
 }

@@ -19,6 +19,15 @@ public class AboveAver {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Background backgr = new Background();
-        backgr.scoreAver();
+        System.out.print("테스트 횟수를 입력하세요. : ");
+        int testCnt = sc.nextInt();
+        double rst[] = new double[testCnt];
+        for(int i = 0; i < testCnt; i++) {
+            rst[i] = backgr.scoreAver();
+        }
+        for(double e : rst) {
+            System.out.printf("%.3f%%\n", e * 100);
+        }
+
     }
 }

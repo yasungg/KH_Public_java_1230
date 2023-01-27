@@ -1,5 +1,7 @@
 package X보다작은수;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 //첫째줄에 N과 X가 주어짐.
@@ -13,22 +15,17 @@ public class LessXMain {
         Scanner sc = new Scanner(System.in);
         System.out.print("N값을 입력하세요. : ");
         int N = sc.nextInt();
-        int[] A = new int[N];
-        int tmp = 0;
-        int X = 0;
-        int index = 0;
-        boolean isExist = false;
-        while (true) {
-            tmp = ((int)(Math.random() * 10000));
-            for(int i = 1; i <= A.length+1 && i >= 1;) {
-                if(A[i] == tmp) isExist = true;
-            }
-            if(isExist == false) A[index++] = tmp;
-            if(index == 10000) break;
-            isExist = false;
+        System.out.print("X값을 입력하세요. : ");
+        int X = sc.nextInt();
+        List<Integer> A = new ArrayList<>();
+        int tmp;
+        int random = 0;
+        for(int i = 0; i < N; i++) {
+            random = (int)(Math.random() * 10000 + 1);
+            A.add(random);
         }
-        for (int i = 0; i < A.length; i++) {
-            System.out.print(A[i] + " ");
+        for(Integer e : A) {
+            if(e > X) System.out.println(e);
         }
     }
 

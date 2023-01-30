@@ -3,7 +3,10 @@ package Map응용커피메뉴;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
+//HashMap ? 키와 값의 Pair로 구성
+//동일 여부 판단을 HashCode를 통해서 함
+//키는 중복 허용 X, 값은 중복을 허용.
+//순서를 보장하지 않음.
 public class CoffeeMenuEx {
     Map<String, MenuInfo> map = new HashMap<>();
 
@@ -42,7 +45,7 @@ public class CoffeeMenuEx {
                 case 2:
                     System.out.println("조회할 메뉴를 입력하세요.");
                     key = sc.next();
-                    if(map.containsKey(key)) {
+                    if(map.containsKey(key)) {//매개변수로 전달된 key가 Map 내에 존재하는지 확인
                         System.out.println("메뉴 : " + map.get(key).name);
                         System.out.println("가격 : " + map.get(key).price);
                         System.out.println("분류 : " + map.get(key).group);
@@ -71,14 +74,31 @@ public class CoffeeMenuEx {
                         System.out.println(map.get(e).name);
                     }
                     System.out.println("메뉴를 선택하세요.");
-                    System.out.print(" : ");
+                    System.out.print(" -> ");
                     key = sc.next();
-                    map.remove(key);
+                    if(map.containsKey(key)) { // 삭제할 메뉴에 대한 키가 있으면 삭제
+                    map.remove(key); //키로 해당하는 map entry 제거
                     System.out.println("메뉴가 삭제되었습니다.");
+                    } else System.out.println("해당 메뉴는 메뉴에 존재하지 않습니다.");
                     for(String e : map.keySet()) {
                         System.out.println(map.get(e).name);
                     }
+                    break;
                 case 5:
+                    System.out.print("수정할 메뉴를 입력하세요.");
+                    System.out.println(" -> ");
+                    key = sc.next();
+                    if(map.containsKey(key)) {
+                        System.out.print("가격 입력 : ");
+                        int price = sc.nextInt();
+                        System.out.print("분류 입력 : ");
+                        String group = sc.next();
+                        sc.nextLine(); // 버퍼 지우기
+                        System.out.print("설명 입력 : ");
+                        String desc = sc.nextLine(); //공백을 입력받기 위해서
+                        map.replace(key, new MenuInfo(key, price, group, desc));
+                    } else System.out.println("수정할 메뉴가 존재하지 않습니다!");
+                    break;
                 case 6:
                     System.out.println("종료합니다.");
                     return;

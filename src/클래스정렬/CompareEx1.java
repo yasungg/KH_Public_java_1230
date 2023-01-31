@@ -1,5 +1,6 @@
 package 클래스정렬;
 //Comparable/Comparator ? 클래스 정렬을 구현할 수 있도록 해주는 인터페이스
+//Comparable ? 자기 자신과 매개변수를 비교하는 것
 
 import com.sun.source.tree.Tree;
 

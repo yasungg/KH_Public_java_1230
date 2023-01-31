@@ -3,12 +3,14 @@ package Map응용커피메뉴;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
+
 //HashMap ? 키와 값의 Pair로 구성
 //동일 여부 판단을 HashCode를 통해서 함
 //키는 중복 허용 X, 값은 중복을 허용.
 //순서를 보장하지 않음.
 public class CoffeeMenuEx {
-    Map<String, MenuInfo> map = new HashMap<>();
+    Map<String, MenuInfo> map = new TreeMap<>();
 
     public static void main(String[] args) {
         CoffeeMenuEx coffee = new CoffeeMenuEx();
@@ -22,6 +24,12 @@ public class CoffeeMenuEx {
         map.put("Espresso", new MenuInfo("Espresso", 3000, "Caffein", "기본 커피입니다."));
         map.put("Latte", new MenuInfo("Latte", 4500, "Caffein", "따뜻한 우유에 Espresso를 첨가해 부드럽게 즐길 수 있는 커피 입니다."));
         map.put("Matcha", new MenuInfo("Matcha", 4500, "Tea variation", "일본식 말차"));
+        map.put("LemonAde", new MenuInfo("LemonAde", 5000, "Ade", "레몬에이드 입니다."));
+        map.put("PeachAde", new MenuInfo("PeachAde", 5800, "Ade", "복숭아에이드 입니다."));
+        map.put("BlackTea", new MenuInfo("BlackTea", 5300, "Tea variation", "홍차 입니다."));
+        map.put("LemonAde", new MenuInfo("LemonAde", 5000, "Ade", "레몬에이드 입니다."));
+
+
     }
 
     void selectMenu() {

@@ -12,7 +12,7 @@ import java.util.Properties;
 public class PropertiesEs {
     public static void main(String[] args) throws IOException {
         Properties properties = new Properties();
-        String path = PropertiesEs.class.getResource("./database.properties").getPath();
+        String path = PropertiesEs.class.getResource("../database.properties").getPath();
         path = URLDecoder.decode(path, "utf-8");
         properties.load(new FileReader(path));
         String driver = properties.getProperty("driver");

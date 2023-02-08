@@ -12,7 +12,7 @@ public class ExceptionEx4 {
         FileWriter f = null;
         try {
             f = new FileWriter("text.txt");
-            f.write("test");
+            f.write("test.txt");
         } catch(IOException e) {
             e.printStackTrace(); // 예외처리 발생 당시의 Call Stack에 있던 결과값을 화면에 출력
         } finally {

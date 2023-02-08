@@ -18,7 +18,7 @@ public class ExceptionEx2 {
             System.out.println("파일을 발견할 수 없습니다.");
         }
         System.out.println("시스템을 정상적으로 종료합니다.");*/
-        //Test test = new Test();
+        //Test test.txt = new Test();
         Test test = null; // 참조변수가 참조하는 객체가 없음을 의미함
         //직접 수정하는 작업이 필요하다. 모든 NullPointException을 찾아서.
         String str = test.name;

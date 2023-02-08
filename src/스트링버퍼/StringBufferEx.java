@@ -13,7 +13,7 @@ public class StringBufferEx {
         sb.append("to java");
         sb.append("javascript");
         sb.delete(1, 3); //1번 인덱스 초과부터 3번 인덱스 이하까지 삭제
-        sb.insert(0, "test"); // offset번째 인덱스에 문자열을 추가함.
+        sb.insert(0, "test.txt"); // offset번째 인덱스에 문자열을 추가함.
 
         System.out.println(sb);
         System.out.println(sb.substring(0, 4));

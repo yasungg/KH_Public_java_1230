@@ -7,7 +7,7 @@ public class SingletonEx2 {
     int id;
     private static SingletonEx2 singleton = new SingletonEx2();
     private SingletonEx2() {
-        name = "test";
+        name = "test.txt";
         id = 100;
     }
     // getSingleton() 메소드 호출 시 미리 만들어져 있는 싱글톤 객체의 참조변수를 반환

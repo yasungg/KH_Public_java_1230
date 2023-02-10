@@ -8,16 +8,15 @@ import java.net.Socket;
 public class NetworkEx2 {
     public static void main(String[] args) {
         ServerSocket serverSocket = null;
-
         try {
             serverSocket = new ServerSocket(); // 포트 바인딩을 위해서 서버 소켓을 생성
             serverSocket.bind(new InetSocketAddress("localhost", 5001));
-        //bind시 IP와 port 번호를 입력하는데, 대부분의 경우 IP는 localhost 지정, 멀티IP인 경우
+        //bind시 IP와 port 번호를 입력하는데, 대부분의 경우 IP는 localhost 지정, 멀티IP인 경우 정확한 IP를 지정
             while(true) {
                 System.out.println("연결 대기");
                 Socket socket = serverSocket.accept(); // 연결 요청을 수락함
                 InetSocketAddress isa = (InetSocketAddress) socket.getRemoteSocketAddress();
-                System.out.println("[연결 요청 수락]" + isa.getHostName());
+                System.out.println("[연결 요청 수락]" + isa.getHostName()); // Client의 IP를 반환(누가 요청했는지 알 수 있도록)
             }
         } catch(Exception e) {}
         if(!serverSocket.isClosed()) {

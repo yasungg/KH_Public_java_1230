@@ -11,13 +11,13 @@ class UsingThis {
     class Inner {
         int innerField = 20;
         void method() {
-        int localVal = 40; // 메소드 내의 지역 변수의 값은 변경될 수 없다.
-        MyFuncInterface mi = () -> {
-            System.out.println("외부 필드 : " + outterField);
-            System.out.println("외부 필드 : " + UsingThis.this.outterField);
-            System.out.println("내부 필드 : " + innerField);
-            System.out.println("내부 필드 : " + this.innerField);
-            System.out.println("지역 변수 : " + localVal);
+            int localVal = 40; // 메소드 내의 지역 변수의 값은 변경될 수 없다.
+            MyFuncInterface mi = () -> {
+                System.out.println("외부 필드 : " + outterField);
+                System.out.println("외부 필드 : " + UsingThis.this.outterField);
+                System.out.println("내부 필드 : " + innerField);
+                System.out.println("내부 필드 : " + this.innerField);
+                System.out.println("지역 변수 : " + localVal);
             };
             mi.method();
         }
